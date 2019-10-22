@@ -1,0 +1,2 @@
+# eventura
+Projekt zespołowy
