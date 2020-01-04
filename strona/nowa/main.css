@@ -1,0 +1,15 @@
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+body {
+  
+}
+
+
+.drugiemenu{
+    background-color:red;
+}
+
+#opis_drugiemenu{
+    text-align: center;
+    padding-top: 5px;
+    color:white;
+}
