@@ -83,15 +83,18 @@ li a:hover {
 
 
 
+#panel{
+    height:100%;
+  
+}
+
 #wyszukiwanie{
-    float: left;
-    width: 100%;
     height: 200px;
     padding-top: 30px;
     padding-bottom: 20px;
     color:white;
        text-align: center;
-    display: inline-block;
+   
 }
 
 
@@ -119,14 +122,202 @@ li a:hover {
 
 
 #topwydarzeniekafelek{
-    
-    display: table;
     text-align: center;
     float: inherit;
-    margin: 0 auto;
-    height:200px;
-    padding-bottom: 40px;
+   
+    height:auto;
+    color:white;
+    
 }
 
+#stopka{
+    
+    width: 100%;
+    color:white;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    bottom: 0;
+   font-size: 13px;
+    line-height: 1.6;
+    background-color: #ef233c;
+    text-decoration: none;
+     list-style: none;
+}
+
+#stopka a{
+    color:white;
+}
+
+
+.row-no-gutters{
+    height:100vh;
+    
+}
+
+.panelstyl{
+    height: 100%;
+    background-color: #ef233c;
+}
+
+.col-sm-4panel {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    height: 100vh;
+    background-color: #ef233c;
+      
+  }
+
+.col-sm-8panel {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+    height:100vh;
+  }
+
+
+.col-sm-3panel {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  
+  .col-sm-9panel {
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+
+/*   Pozycje galeria/wydarzenia    */
+
+
+
+.gallery-image {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-image img {
+  height: 250px;
+  width: 350px;
+  transform: scale(1.0);
+  transition: transform 0.4s ease;
+}
+
+.img-box {
+  box-sizing: content-box;
+  margin: 10px;
+  height: 250px;
+  width: 350px;
+  overflow: hidden;
+  display: inline-block;
+  color: white;
+  position: relative;
+  background-color: white;
+}
+
+
+.img-boxtopwydarzenie {
+  box-sizing: content-box;
+  margin: 10px;
+  height: 250px;
+  width: 550px;
+  overflow: hidden;
+  display: inline-block;
+  color: white;
+  position: relative;
+  background-color: white;
+}
+
+.img-boxtopwydarzenie:hover img { 
+  transform: scale(1.1);
+}
+
+.img-boxtopwydarzenie:hover .transparent-box {
+  background-color:rgba(0, 0, 0, 0.9);
+}
+
+.img-boxtopwydarzenie:hover .caption {
+  transform: translateY(-20px);
+  opacity: 1.0;
+}
+
+.img-boxtopwydarzenie:hover {
+  cursor: pointer;
+}
+
+.transparent-boxtopwydarzenie {
+  height: 100%;
+  width: 100%;
+  background-color:rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: background-color 0.3s ease;
+}
+
+.captiontopwydarzenie {
+  position: absolute;
+  bottom: 5px;
+  left: 20px;
+  opacity: 0.0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.opacity-lowtopwydarzenie {
+  opacity: 0.5;
+}
+
+
+
+
+
+
+
+.caption {
+  position: absolute;
+  bottom: 5px;
+  left: 20px;
+  opacity: 0.0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.transparent-box {
+  height: 250px;
+  width: 350px;
+  background-color:rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: background-color 0.3s ease;
+}
+
+.img-box:hover img { 
+  transform: scale(1.1);
+}
+
+.img-box:hover .transparent-box {
+  background-color:rgba(0, 0, 0, 0.5);
+}
+
+.img-box:hover .caption {
+  transform: translateY(-20px);
+  opacity: 1.0;
+}
+
+.img-box:hover {
+  cursor: pointer;
+}
+
+.caption > p:nth-child(2) {
+  font-size: 0.8em;
+}
+
+.opacity-low {
+  opacity: 0.5;
+}
 
 

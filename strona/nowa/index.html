@@ -16,6 +16,25 @@
     <link href="main.css" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    
+     <script>
+      document.addEventListener("touchstart", function(){}, true);
+      </script>
+    
+    <script>
+      const imgContent = document.querySelectorAll('.img-content-hover');
+
+function showImgContent(e) {
+  for(var i = 0; i < imgContent.length; i++) {
+    imgContent[i].style.left = e.pageX + 'px';
+    imgContent[i].style.top = e.pageY + 'px';
+  }
+};
+
+document.addEventListener('mousemove', showImgContent);</script>
+    
+    
   </head>
 
   <body>
@@ -48,11 +67,11 @@
           
           <div id="menus">
        <ul>
-  <li><a href="#home">Home</a></li>
-  <li><a href="#news">Kalendarz</a></li>
-  <li><a href="#contact">Społeczność</a></li>
-  <li><a href="#about">Lista wydarzeń</a></li>
-    <li><a href="#about"> <i class="fa fa-bell"></i> Ustaw powiadomienia!</a></li>
+  <li><a href="#home"><i class="fa fa-home"></i>  Home</a></li>
+  <li><a href="#news"><i class="fa fa-calendar"></i>  Kalendarz</a></li>
+  <li><a href="#contact"><i class="fa fa-users"></i>  Społeczność</a></li>
+  <li><a href="#about"><i class="fa fa-list-alt"></i>  Lista wydarzeń</a></li>
+           <li><a href="#about"> <i class="fa fa-bell"></i>  <b>Ustaw powiadomienia!</b></a></li>
 
 </ul>
           </div>
@@ -70,45 +89,148 @@
       
       
       <div class="row row-no-gutters">
-      <div class="col-sm-8" style="height:100%;">
+      <div class="col-sm-9panel" style="height:100%;">
       
       
-      
-      gdsfgdsgdsg
-      
+       <div class="gallery-image">
+    <div class="img-box">
+      <img src="https://picsum.photos/350/250?image=444" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>Library</p>
+          <p class="opacity-low">Architect Design</p>
+        </div>
+      </div> 
+    </div>
+    <div class="img-box">
+      <img src="https://picsum.photos/350/250/?image=232" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>Night Sky</p>
+          <p class="opacity-low">Cinematic</p>
+        </div>
+      </div>
+    </div>
+    <div class="img-box">
+      <img src="https://picsum.photos/350/250/?image=431" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>Tea Talk</p>
+          <p class="opacity-low">Composite</p>
+        </div>
+      </div>
+    </div>
+    <div class="img-box">
+      <img src="https://picsum.photos/350/250?image=474" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>Road</p>
+          <p class="opacity-low">Landscape</p>
+        </div>
+      </div> 
+    </div>
+    <div class="img-box">
+      <img src="https://picsum.photos/350/250?image=344" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>Sea</p>
+          <p class="opacity-low">Cityscape</p>
+        </div>
+      </div> 
+    </div>
+    <div class="img-box">
+      <img src="https://picsum.photos/350/250?image=494" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>Vintage</p>
+          <p class="opacity-low">Cinematic</p>
+        </div>
+      </div> 
+    </div>
+     <div class="img-box">
+      <img src="https://picsum.photos/350/250?image=494" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>Vintage</p>
+          <p class="opacity-low">Cinematic</p>
+        </div>
+      </div> 
+    </div>
+    <div class="img-box">
+      <img src="https://picsum.photos/350/250?image=494" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>Vintage</p>
+          <p class="opacity-low">Cinematic</p>
+        </div>
+      </div> 
+    </div>
+    <div class="img-box">
+      <img src="https://picsum.photos/350/250?image=494" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>Vintage</p>
+          <p class="opacity-low">Cinematic</p>
+        </div>
+      </div> 
+    </div>
+  </div>
+     
+
       
       
       </div>
       
-    <div class="col-sm-4" style="background-color:#ef233c;height:100%;">
-    
+      
+      
+      
+      
+      
+      
+    <div class="col-sm-3panel panelstyl" >
+    <div id="panel">
     <div id="wyszukiwanie">
         <!-- Search form -->
         <p>Wyszukaj interesujące wydarzenie:</p>
-<input class="form-control" type="text" placeholder="Search" aria-label="Search">
+<input class="form-control" type="text" placeholder="Search" aria-label="Search" style="width:50%; display: inline-block;">
    
     </div>
     <div id="kalendarz">
        <p>Kalendarz</p>
         
     </div>
-    <div id="topwydarzenie"></div>
+    
 
    <div id="topwydarzeniekafelek">
-       fsafs
+      <p>Top wydarzenie miesiąca:</p>
+      
+      <div class="img-box">
+      <img src="https://picsum.photos/350/250?image=494" alt="" />
+      <div class="transparent-box">
+        <div class="caption">
+          <p>Vintage</p>
+          <p class="opacity-low">Cinematic</p>
+        </div>
+      </div> 
+    </div>
    </div>
-   
    
    
     </div>
     
+    <div id="stopka">
+        Made by FKaminski, KWielgosz, RFrankiewicz<br>
+        <b>Eventura</b> copyrights © 2020 <br>
+        <a href=""> <i class="fa fa-facebook"></i></a>
+        <a href=""> <i class="fa fa-twitter-square"></i> </a>
+        <a href=""> <i class="fa fa-google"></i> </a>
+        <a href=""> <i class="fa fa-github"></i> </a>
+    </div>
+   
+    
   </div>
       
 
-    
-    <script>
-      document.addEventListener("touchstart", function(){}, true);
-      </script>
      
   </body>
 </html>
