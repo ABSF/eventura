@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="img/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="author" content="FKaminski KWielgosz RFrankiewicz">
+    <meta name="description" content="Eventura - sprawdź najlepsze wydarzenia w mieście" />
+    <link rel="apple-touch-icon" href="img/logo192.png" />
+    <link rel="manifest" href="img/manifest.json" />
+
+    <title>Eventura</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- Custom font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+    <script>
+      document.addEventListener("touchstart", function(){}, true);
+    </script>
+
+    <script>
+      const imgContent = document.querySelectorAll('.img-content-hover');
+
+      function showImgContent(e) {
+        for(var i = 0; i < imgContent.length; i++) {
+          imgContent[i].style.left = e.pageX + 'px';
+          imgContent[i].style.top = e.pageY + 'px';
+        }
+      };
+
+      document.addEventListener('mousemove', showImgContent);
+    </script>
+
+    <script>
+      $(document).ready(function() {
+        $(".datepicker").datepicker({
+          prevText: '<i class="fa fa-fw fa-angle-left"></i>',
+          nextText: '<i class="fa fa-fw fa-angle-right"></i>'
+        });
+      });
+    </script>
+
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>

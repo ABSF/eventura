@@ -1,0 +1,878 @@
+#nawigacja {
+    width: 100%;
+    background-color: #2b2d42;
+    height: 50px;
+    color: white;
+
+
+
+}
+
+#nawigacjalogo {
+    float: left;
+    padding-left: 40px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+
+}
+
+
+#nawigacjaakcje {
+    float: right;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color: white;
+    text-decoration: none;
+
+}
+
+#nawigacjaakcje a {
+
+    color: white;
+    text-decoration: none;
+
+}
+
+
+#nawigacjaakcje i {
+    padding-left: 25px;
+}
+
+
+#menu {
+    width: 100%;
+    height: 60px;
+    background-color: #edf2f4;
+    display: inline-block;
+    text-align: center;
+
+}
+
+#menus {
+    width: 100%;
+    list-style: none;
+    color: white;
+    text-align: center;
+    display: inline-block;
+
+}
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding-right: 20px;
+    padding-left: 20px;
+    overflow: hidden;
+    background-color: #edf2f4;
+    display: inline-block;
+}
+
+li {
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+li a {
+    display: block;
+    color: #2b2d42;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #edf2f4;
+    color: #ef233c;
+    text-decoration: none;
+}
+
+
+
+#panel {
+    height: 100%;
+
+}
+
+.panel_event {
+    
+    width: 100%;
+    background-image: url('../img/event.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding: 0;
+    /* remove any pre-existing padding, just in case */
+
+    object-fit: contain;
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 25%;
+    max-height: 1000px;
+
+}
+
+#wyszukiwanie {
+    height: 200px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    color: white;
+    text-align: center;
+
+}
+
+
+
+#kalendarz {
+    width: 100%;
+    height: 300px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    color: white;
+    text-align: center;
+    display: inline-block;
+}
+
+
+#topwydarzenie {
+    color: white;
+    width: 100%;
+    height: 300px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    text-align: center;
+    display: inline-block;
+}
+
+
+#topwydarzeniekafelek {
+    text-align: center;
+    float: inherit;
+
+    height: auto;
+    color: white;
+
+}
+
+#stopka {
+
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    bottom: 0;
+    font-size: 13px;
+    line-height: 1.6;
+    background-color: #ef233c;
+    text-decoration: none;
+    list-style: none;
+}
+
+
+#stopka_event {
+
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    bottom: 0;
+    font-size: 13px;
+    line-height: 1.6;
+    background-color: #ef233c;
+    text-decoration: none;
+    list-style: none;
+}
+
+#stopka a {
+    color: white;
+}
+
+#stopka_event a {
+    color: white;
+}
+
+
+.row-no-gutters {
+    height: 100vh;
+
+}
+
+.event_info {
+    height: 100%;
+    padding-top: 100px;
+    padding-left: 100px;
+
+}
+
+.event_info_padding {
+    height: 100%;
+    padding-top: 20px;
+    padding-left: 100px;
+    padding-bottom: 30px;
+
+}
+
+
+.panelstyl {
+    height: 100%;
+    background-color: #ef233c;
+}
+
+.col-sm-4panel {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    height: 100vh;
+    background-color: #ef233c;
+
+}
+
+.col-sm-8panel {
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+    height: 100vh;
+}
+
+
+.col-sm-3panel {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-sm-9panel {
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+/*   Pozycje galeria/wydarzenia    */
+
+
+
+.gallery-image {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-image img {
+    height: 250px;
+    width: 350px;
+    transform: scale(1.0);
+    transition: transform 0.4s ease;
+}
+
+.img-box {
+    box-sizing: content-box;
+    margin: 10px;
+    height: 250px;
+    width: 350px;
+    overflow: hidden;
+    display: inline-block;
+    color: white;
+    position: relative;
+    background-color: white;
+}
+
+.img-box_event {
+    box-sizing: content-box;
+    height: 250px;
+    width: 350px;
+    overflow: hidden;
+    display: inline-block;
+    color: white;
+    position: relative;
+    background-color: white;
+}
+
+.img-boxevent:hover img {
+    transform: scale(1.1);
+}
+
+.img-boxevent:hover .transparent-box {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.img-boxevent:hover .caption {
+    transform: translateY(-20px);
+    opacity: 1.0;
+}
+
+.img-boxevent:hover {
+    cursor: pointer;
+}
+
+.transparent-boxevent {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: background-color 0.3s ease;
+}
+
+.captionevent {
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+    opacity: 0.0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.opacity-event {
+    opacity: 0.5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.img-boxtopwydarzenie {
+    box-sizing: content-box;
+    margin: 10px;
+    height: 250px;
+    width: 550px;
+    overflow: hidden;
+    display: inline-block;
+    color: white;
+    position: relative;
+    background-color: white;
+}
+
+.img-boxtopwydarzenie:hover img {
+    transform: scale(1.1);
+}
+
+.img-boxtopwydarzenie:hover .transparent-box {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.img-boxtopwydarzenie:hover .caption {
+    transform: translateY(-20px);
+    opacity: 1.0;
+}
+
+.img-boxtopwydarzenie:hover {
+    cursor: pointer;
+}
+
+.transparent-boxtopwydarzenie {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: background-color 0.3s ease;
+}
+
+.captiontopwydarzenie {
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+    opacity: 0.0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.opacity-lowtopwydarzenie {
+    opacity: 0.5;
+}
+
+
+
+
+
+
+
+.caption {
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+    opacity: 0.0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.transparent-box {
+    height: 250px;
+    width: 350px;
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: background-color 0.3s ease;
+}
+
+.img-box:hover img {
+    transform: scale(1.1);
+}
+
+.img-box:hover .transparent-box {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.img-box:hover .caption {
+    transform: translateY(-20px);
+    opacity: 1.0;
+}
+
+.img-box:hover {
+    cursor: pointer;
+}
+
+.caption > p:nth-child(2) {
+    font-size: 0.8em;
+}
+
+.opacity-low {
+    opacity: 0.5;
+}
+
+
+
+
+
+/*   Button kup bilet    */
+
+.kupbilet{
+    padding-left: 0px;
+    padding-top: 20px;
+}
+
+
+.btn:link,
+.btn:visited{
+  text-decoration: none;
+  text-transform:uppercase;
+  position:relative;
+  top:0;
+  left:0;
+  padding:10px 20px;
+  border-radius:100px;
+  display:inline-block;
+  transition: all .5s;
+}
+
+.btn-white{
+  background:#d90429;
+  color:white;
+}
+
+.btn:hover{
+   box-shadow:0px 10px 10px rgba(0,0,0,0.2);
+   transform : translateY(-3px);
+}
+
+.btn:active{
+  box-shadow:0px 5px 10px rgba(0,0,0,0.2)
+  transform:translateY(-1px);
+}
+
+.btn-bottom-animation-1{
+  animation:comeFromBottom 1s ease-out .8s;
+}
+
+.btn::after{
+  content:"";
+  text-decoration: none;
+  text-transform:uppercase;
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  border-radius:100px;
+  display:inline-block;
+  z-index:-1;
+  transition: all .5s;
+}
+
+.btn-white::after {
+    background: #ef233c;
+}
+
+.btn-animation-1:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+
+
+
+
+
+/*   wyszukiwanie    */
+
+
+
+#wyszukiwanie{
+    width: 100%;
+    height: 300px;
+    background-image:url('../img/wyszukiwanietlo.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding: 0;
+    object-fit: fill;
+    padding-top: 100px;
+    
+    
+}
+
+
+.wyszukiwarka{
+    width: 50%;
+    text-align: center;
+    display: inline-block;
+}
+
+
+
+
+/*
+* The r-text-field component
+*/
+
+/*
+The component will reset input browser styles
+*/
+
+.r-text-field{
+  --uiTextFieldPlaceholderColor: var(--textFieldPlaceholderColor);
+
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  border-radius: 0;
+  border-style: solid;
+}
+
+.r-text-field::-webkit-input-placeholder{
+  color: var(--uiTextFieldPlaceholderColor);
+}
+
+.r-text-field::-moz-placeholder{
+  opacity: 1;
+  color: var(--uiTextFieldPlaceholderColor);
+}
+
+.r-text-field:invalid{
+  outline: none;
+  box-shadow: none;
+}
+
+/*
+* The r-button component
+*/
+
+/*
+The component will reset button browser styles
+*/
+
+.r-button{
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  
+  font-family: inherit;
+  font-size: inherit;  
+}
+
+/* Remove the inner border and padding in Firefox. */
+
+.r-button::-moz-focus-inner,
+.r-button[type="button"]::-moz-focus-inner,
+.r-button[type="reset"]::-moz-focus-inner,
+.r-button[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+
+/*
+* The a-field component
+*/
+
+/*
+ 1. The --aFieldHeight option defines an input height. And this option is needed for calculations of a hint final position 
+ 2. The --aFieldHintFinalCoordinate option defines calculations of the final Y-axis coordinate
+ 3. The —aFieldPaddingLeft option defines left indent for a hint and query text
+*/
+
+.a-field{
+  --uiaFieldHeight: var(--aFieldHeight);
+  --uiaFieldHintFinalCoordinate: var(--aFieldHintFinalCoordinate, var(--uiaFieldHeight));
+  --uiaFieldPaddingLeft: var(--aFieldPaddingLeft);   
+
+  position: relative;
+  padding-top: calc(var(--uiaFieldHintFinalCoordinate) - var(--uiaFieldHeight)); /* 1, 2 */
+}
+
+.a-field__input{
+  box-sizing: border-box;
+  height: var(--uiaFieldHeight); /* 1 */
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: var(--uiaFieldPaddingLeft); /* 3 */
+}
+
+.a-field__input::-webkit-input-placeholder{
+  opacity: 0;
+  transition: opacity .2s ease-out;
+}
+
+.a-field__input::-moz-placeholder{
+  opacity: 0;
+}
+
+.a-field__input:focus::-webkit-input-placeholder{
+  opacity: 1;
+  transition-delay: .2s;
+}
+
+.a-field__input:focus::-moz-placeholder{
+  opacity: 1;
+}
+
+.a-field__label-wrap{
+  box-sizing: border-box;
+  width: 100%;
+  height: var(--uiaFieldHeight);	/* 1 */
+
+  pointer-events: none;
+  cursor: text;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.a-field__label{
+  position: absolute;
+  left: var(--uiaFieldPaddingLeft); /* 3 */
+  bottom: calc(50% - .5em);
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* 
+  I needed to create an animation onle Chromium broswers because:
+  1. Firefox doesn't support a placeholder animation
+  2. I couldn't make an correct animation at Edge
+*/
+
+@supports (-webkit-appearance: none){
+  
+  .a-field__label{
+    transition: bottom .2s cubic-bezier(0.9,-0.15, 0.1, 1.15), opacity .2s ease-out;
+    will-change: bottom, opacity;
+  }
+}
+
+/* If a user had inserted a text of query a hint will be hidden */
+
+.a-field__input:not(:placeholder-shown) ~ .a-field__label-wrap .a-field__label{
+  opacity: 0;
+  bottom: 85%;
+}
+
+/* If the focal point is a field a hint will be displayed */
+
+.a-field__input:focus ~ .a-field__label-wrap .a-field__label{
+  opacity: 1;
+  bottom: var(--uiaFieldHintFinalCoordinate); /* 2 */
+}
+
+/*
+* the search component
+*/
+
+.search{
+  --searchFieldHeight: 50px;
+  --searchButtonSize: var(--searchFieldHeight);
+  --textFieldPlaceholderColor: #fff;
+
+  --aFieldHeight: var(--searchFieldHeight);
+  /* The 10px value has been calculated for this demo and you can change it */
+  --aFieldHintFinalCoordinate: calc(var(--searchFieldHeight) + 10px);
+  --aFieldPaddingLeft: 30px;
+
+  color: #fff;
+  position: relative;
+}
+
+/* 
+ 1. I needed to set the currentColor value for correct displaying a border on iOS devices
+*/
+
+.search__input{
+  width: 100%; 
+  border-width: 3px;
+  border-color: currentColor; /* 1 */
+
+  border-radius: 25px;
+  background-color: transparent;
+  
+  font-size: 18px;
+  color: currentColor;  
+}
+
+.search__input:focus{
+  outline: none;
+}
+
+.search__hint{
+  font-size: 16px;
+}
+
+.search__button{
+  color: currentColor;
+}
+
+.search__button:focus{
+  outline: none;
+}
+
+.search__clear{
+  width: 1em;
+  height: 1em;
+  font-size: var(--searchButtonSize);
+
+  position: absolute;
+  bottom: 0;
+  display: none;
+}
+
+/* If a user starts typing a clearing button will be displayed */
+
+.search__input:not(:placeholder-shown) ~ .search__clear{
+  display: block;
+}
+
+/* If the focal point is a clearing button the hint will be displayed */
+
+.search__clear:focus ~ .a-field__label-wrap .a-field__label{
+  opacity: 1;
+  bottom: var(--aFieldHintFinalCoordinate);
+}
+
+.search__clear-label{
+  position: absolute;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.search__icon{
+  fill: currentColor;
+  display: block;
+
+  box-sizing: border-box;
+  width: 1.5em;
+  height: 1.5em;
+  padding: .25em;
+
+  position: absolute;
+  top: calc(50% - .75em);
+  left: calc(50% - .75em);
+}
+
+.search__button:focus .search__icon{
+  box-shadow: 0 0 0 3px currentColor;
+}
+
+.search__icon-clear{
+  font-size: 18px;
+}
+
+@media (max-width: 640px){
+
+  .search__input{
+    padding-right: 50px;
+  }
+  
+  .search__clear{
+    right: 10px;
+  }  
+  
+  .search__submit{
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+
+    background-color: #fff;
+    text-transform: uppercase;
+    color: #5f27cd;
+    border-radius: 25px;  
+    margin-top: 25px;
+  }
+ 
+  .search__submit:focus{
+    box-shadow: 0 0 0 3px currentColor;
+    color: #422380;
+  }
+  
+  .search__icon-search{
+    display: none;
+  }
+}
+
+@media (min-width: 641px){
+
+  .search__input{
+    padding-right: 115px;
+  }
+  
+  .search__clear{
+    right: var(--searchButtonSize);
+  }
+
+  .search__submit{
+    width: 1em;
+    height: 1em;
+    font-size: var(--searchButtonSize);
+
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+  }
+
+  .search__submit-label{
+    position: absolute;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+  }
+
+  .search__icon-search{
+    font-size: 22px;
+  }  
+}
