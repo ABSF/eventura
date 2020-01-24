@@ -100,7 +100,7 @@ li a:hover {
 .panel_event {
     
     width: 100%;
-    background-image: url('../img/event.jpg');
+    background-image: url(event.jpg);
     background-position: center top;
     background-repeat: no-repeat;
     padding: 0;
@@ -150,7 +150,7 @@ li a:hover {
 #topwydarzeniekafelek {
     text-align: center;
     float: inherit;
-
+margin-top: 50px;
     height: auto;
     color: white;
 
@@ -169,8 +169,17 @@ li a:hover {
     background-color: #ef233c;
     text-decoration: none;
     list-style: none;
+
+    
 }
 
+#bottom{
+     display: flex;                  /* establish flex container */
+  flex-direction: row;            /* default value; can be omitted */
+  flex-wrap: nowrap; 
+    height: 100%;
+    padding-bottom: 100px;
+}
 
 #stopka_event {
 
@@ -195,6 +204,104 @@ li a:hover {
     color: white;
 }
 
+footer{
+   display: block;
+    text-align: center;
+    font-size: 0.75em;
+    bottom:0;
+    width: 100%;
+    height: 30px;
+    position: fixed;
+    padding-bottom:60px;
+  
+}
+#bottom{
+    display: block;
+    text-align: center;
+    font-size: 0.75em;
+    bottom:0;
+    width: 100%;
+    height: 120px;
+    position: fixed;
+}
+
+#numeracjastron{
+    padding-bottom: 150px;
+    text-align: center;
+    align-content: center;
+    width:100%
+    }
+
+.pagination {
+  display: inline-block;
+ 
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #ef233c;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+#pozycje_lista_wydarzenie{
+  display:inline-block;
+ text-align: center;
+    padding-bottom: 50px;
+    padding-top: 20px;
+   
+    
+    
+}
+
+#eventlistposition{
+    width:100%;
+    
+    text-align: center;
+    padding-left: 200px;
+    display: flex;                  /* establish flex container */
+  flex-direction: row;            /* default value; can be omitted */
+  flex-wrap: nowrap; 
+
+}
+
+#eventposition_zdjecie{
+    display: inline-block;
+    float:left;
+    
+}
+
+#eventposition_opis{
+    float:right;
+    display: inline-block;
+    padding-left: 60px;
+   
+   
+}
+
+#eventposition_opis p{
+font-size: 15pt;
+    font-weight: bold;
+    text-align: left;
+    padding-left:20px;
+    
+}
+
+#eventposition_opis a{
+    text-decoration: none;
+    color: #ef233c;
+}
 
 .row-no-gutters {
     height: 100vh;
@@ -530,11 +637,11 @@ li a:hover {
 #wyszukiwanie{
     width: 100%;
     height: 300px;
-    background-image:url('../img/wyszukiwanietlo.jpg');
-    background-position: center top;
+    background-image:url(../img/wyszukiwanietlo.jpg);
+     background-position: center top;
     background-repeat: no-repeat;
     padding: 0;
-    object-fit: fill;
+        object-fit: fill;
     padding-top: 100px;
     
     
