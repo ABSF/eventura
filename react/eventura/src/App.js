@@ -1,9 +1,7 @@
-import React, { Component } from 'react'
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
-import EventsListItem from './EventsListItem.js';
-import EventsSummary from './EventsSummary.js';
 import EventsList from './EventsList.js';
+import EventsSummary from './EventsSummary.js';
 import {
   BrowserRouter as Router,
   Switch,
@@ -33,13 +31,13 @@ class App extends React.Component {
         
         <div id="nawigacja">
           <div id="nawigacjalogo">
-            <a href="#"><img src="img/logo.png" /></a>
+            <a href="#logo"><img src="img/logo.png" alt="logo"/></a>
           </div>  
               
           <div id="nawigacjaakcje">
             <Link to="/wyszukiwanie"><i class="fa fa-search"/></Link>
-            <a href=""><i class="fa fa-bell"/></a>
-            <a href=""><i class="fa fa-user"/></a>
+            <a href="#bell"><i class="fa fa-bell"/></a>
+            <a href="#user"><i class="fa fa-user"/></a>
           </div>
         </div>
         
@@ -50,23 +48,66 @@ class App extends React.Component {
               <li><Link to="/"><i class="fa fa-calendar"/>  Kalendarz</Link></li>
               <li><Link to="/"><i class="fa fa-users" />  Społeczność</Link></li>
               <li><Link to="/wyszukiwanie"><i class="fa fa-list-alt"/>  Lista wydarzeń</Link></li>
-              <li><Link to="/"><i class="fa fa-bell" /><b>Ustaw powiadomienia!</b></Link></li>
+              <li><Link to="/wydarzenie"><i class="fa fa-bell" /><b>Ustaw powiadomienia!</b></Link></li>
             </ul>
           </div>
         </div>
 
         {/* <!-- tresc strony --> */}
-
-                            
+                 
         <Switch>
           <Route exact path="/"><RHome /></Route>
-          <Route path="/wyszukiwanie" component={EventsList}></Route>
+          <Route path="/wyszukiwanie" component={EventsList} />
+          <Route path="/wydarzenie"><RSummary /></Route>
         </Switch>
         </Router>
       </div>      
     );
   }
-
+  RSummary() {
+    
+    return(
+      <div>
+        <div class="row row-no-gutters">
+          <div class="panel_event"></div>
+          <div class="col-sm-9panel" style={{height: '100%'}}>
+            <div class="col-sm-9panel event_info">
+              <div class="event_info1 ">
+                <h1>event_name</h1><br />
+                <b><h4>event_date</h4></b>
+                <p>event_venue</p>
+              </div>
+              <div class="event_info2 " style={{'padding-top': '30px'}}>
+                <div class="img-box" style={{'margin-left': '0'}}>
+                  <img src='event_logo' alt="logo" />
+                  <div class="transparent-box">
+                    <div class="caption">
+                      <p>event_name</p>
+                    </div>
+                  </div> 
+                </div>
+              </div><br /><br /><br /><br />
+              <p>event_summary</p>
+              <div class="kupbilet">
+                <a href="#kup" class="btn btn-white btn-animation-1">Kup bilet już teraz <br />
+                <b>100 zł</b></a> 
+              </div>
+            </div>
+            <div class="event_info3 ">
+            </div>
+          </div>
+        </div>
+        <div id="stopka_event">
+            Made by FKaminski, KWielgosz, RFrankiewicz<br />
+            <b>Eventura</b> copyrights © 2020 <br />
+            <a href=""><i class="fa fa-facebook" /></a>
+            <a href=""><i class="fa fa-twitter-square" /></a>
+            <a href=""><i class="fa fa-google" /></a>
+            <a href=""><i class="fa fa-github" /></a>
+        </div>
+      </div>
+    )
+  }
 }
 
 function RHome() {
@@ -170,7 +211,7 @@ function RHome() {
                         <div id="topwydarzeniekafelek">
                           <p>Top wydarzenie miesiąca:</p>
                           <div class="img-box">
-                            <img src="kafelek.png" alt="" />
+                            <img src="./img/kafelek.png" alt="" />
                             <div class="transparent-box">
                               <div class="caption">
                                 <p>Top wydarzenie</p>
@@ -183,18 +224,16 @@ function RHome() {
                       <div id="stopka">
                           Made by FKaminski, KWielgosz, RFrankiewicz<br />
                           <b>Eventura</b> copyrights © 2020 <br />
-                          <a href=""> <i class="fa fa-facebook" /></a>
-                          <a href=""> <i class="fa fa-twitter-square" /></a>
-                          <a href=""> <i class="fa fa-google" /></a>
-                          <a href=""> <i class="fa fa-github" /></a>
+                          <a href="#fa"> <i class="fa fa-facebook" /></a>
+                          <a href="#tw"> <i class="fa fa-twitter-square" /></a>
+                          <a href="#gg"> <i class="fa fa-google" /></a>
+                          <a href="#gh"> <i class="fa fa-github" /></a>
                       </div>
                     </div>
           </div>
           );
 }
 
-function REmpty() {
-  return <br />
-}
+
 
 export default App;

@@ -1,5 +1,11 @@
-import React, { Component } from 'react'
-import EventsListItem from "./EventsListItem";
+import React from 'react';
+import EventsSummary from './EventsSummary.js';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const BASE_URL = "/events/all";
 
@@ -7,13 +13,43 @@ export class EventsList extends React.Component {
   state = {
     isLoading: false,
     events: [],
-    error: null
+    error: null,
+    draft: ''
   }
-  
+
+  updateDraft = event => {
+    this.setState({draft: event.target.value})
+  }
+
+  searchDraft = () => {
+    alert('Podano następujące informacje: ' + this.state.draft)
+    const str = this.state.draft.trim()
+    var regex = /(\d+\-+)/
+    var url = ''
+
+    if(regex.test(str)){//zawiera date, szuka dla daty
+      alert('Wynik pozytywny regex: ')
+      url = '/events/search?dateStart=' + str + '&dateEnd=' + str
+      alert('Adres url dla szukania daty: ' + url)
+      this.fetching(url)
+    }else{//nie zawiera daty, szuka w summary
+      alert('Wynik negatywny regex: ')
+      url = '/events/search?text=' + str
+      alert('Adres url dla szukania frazy w summary: ' + url)
+      this.fetching(url)
+    }
+  }
+
   componentDidMount(){
+    console.log('componentDidMount')
+    this.fetching(BASE_URL)
+    console.log('componentDidMount zakonczono')
+  }
+
+  fetching(URL){
     this.setState({isLoading: true})
 
-    fetch(BASE_URL)
+    fetch(URL)
       .then(res => {
         if(res.ok){
           return res.json()
@@ -23,7 +59,7 @@ export class EventsList extends React.Component {
       }) 
       .then(events => {
         console.log('Pobrał JSON.')
-        // console.log(events);
+        console.log(events);
         this.setState({events, isLoading: false})
       })
       .catch(error => {
@@ -45,13 +81,13 @@ export class EventsList extends React.Component {
     
     return (
       <div>
-
+        <Router>
         <div id="wyszukiwanie">
           <div class="wyszukiwarka">
             <div class="page__demo">
-              <form class="search">
+              <form class="search" onSubmit={this.searchDraft}>
               <div class="a-field search__field">
-                <input type="text" id="query" class="r-text-field a-field__input search__input" placeholder="np. Koncerty Warszawa" required />
+                <input type="text" id="query" class="r-text-field a-field__input search__input" placeholder="np. Koncerty Warszawa" required onChange={this.updateDraft}/>
                 <button class="r-button search__button search__clear" type="reset">
                   <span class="search__clear-label">Wyczyść pole wyszukiwania</span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.971 47.971" class="search__icon search__icon-clear">
@@ -74,45 +110,47 @@ export class EventsList extends React.Component {
         </div>
         <div>
           {events.map(event => (
-            <>
+            <div key={event.event_id}>
               <div id="pozycje_lista_wydarzenie" >
-                  <div class="col-sm-2" />
-                    <div class="col-sm-8" style={{height:'100%'}}>
-                      <div id="eventlistposition">
-                        <div id="eventposition_zdjecie">
-                          <div class="img-box">
-                            <img src={event.logo} alt="" />
-                            <div class="transparent-box">
-                              <div class="caption">
-                                <p>Wydarzenie</p>
-                                <p class="opacity-low">Opis wydarzenia</p>
-                              </div>
-                            </div> 
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8" style={{height:'100%'}}>
+                  <div id="eventlistposition">
+                    <div id="eventposition_zdjecie">
+                      <div class="img-box">
+                        <img src={event.logo} alt="" />
+                        <div class="transparent-box">
+                          <div class="caption">
+                          <p>{event.name}</p>
                           </div>
-                        </div>
-                        <div id="eventposition_opis">
-                          <p><a href="">{event.name}</a></p>
-                          {event.summary}
                         </div> 
                       </div>
                     </div>
+                    <div id="eventposition_opis">
+                      <p><a href="#event"><Link to="/wydarzenie" component={EventsSummary}>{event.name}</Link></a></p>
+                    </div> 
+                  </div>
+                </div>
                   <div class="col-sm-2" />
-                </div> 
-            </>
+              </div> 
+            </div>
           ))}
-        </div>
+        </div><br /><br /><br /><br /><br />
         <footer>        
           <div id="bottom">                    
-            <div id="stopka" style={{'padding-bottom': '60px'}}>
+            <div id="stopka">
               Made by FKaminski, KWielgosz, RFrankiewicz<br />
               <b>Eventura</b> copyrights © 2020 <br />
-              <a href=""> <i class="fa fa-facebook" /></a>
-              <a href=""> <i class="fa fa-twitter-square" /></a>
-              <a href=""> <i class="fa fa-google" /></a>
-              <a href=""> <i class="fa fa-github" /></a>
+              <a href="#fb"> <i class="fa fa-facebook" /></a>
+              <a href="#tw"> <i class="fa fa-twitter-square" /></a>
+              <a href="#gg"> <i class="fa fa-google" /></a>
+              <a href="#gh"> <i class="fa fa-github" /></a>
             </div>
           </div>
         </footer>
+        <Switch>
+          <Route path="/wydarzenie"></Route>
+        </Switch>
+        </Router>
       </div>
     );
       
