@@ -117,7 +117,7 @@ export class EventsList extends React.Component {
                   <div id="eventlistposition">
                     <div id="eventposition_zdjecie">
                       <div class="img-box">
-                        <img src={event.logo} alt="" />
+                        <img src={event.logo} alt="logo" />
                         <div class="transparent-box">
                           <div class="caption">
                           <p>{event.name}</p>
@@ -126,7 +126,13 @@ export class EventsList extends React.Component {
                       </div>
                     </div>
                     <div id="eventposition_opis">
-                      <p><a href="#event"><Link to="/wydarzenie" component={EventsSummary}>{event.name}</Link></a></p>
+                      <p><a href="#event">
+                        {/* <Link to="/wydarzenie" component={EventsSummary}> */}
+                          {event.name}
+                          {/* </Link> */}
+                          
+                      </a></p><br/>
+                        {event.summary}
                     </div> 
                   </div>
                 </div>

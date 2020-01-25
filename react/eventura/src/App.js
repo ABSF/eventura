@@ -9,14 +9,154 @@ import {
   Link
 } from "react-router-dom";
 
+const BASE_URL = "/events/all";
+const BASE_URL_O = "/events/1";
 
 class App extends React.Component {
 
   state = {
     isLoading: true,
     events: [],
+    eventsO: [],
     error: null
   }
+
+  componentDidMount(){
+    console.log('componentDidMount')
+    this.fetching(BASE_URL)
+    this.fetching(BASE_URL_O)
+    console.log('componentDidMount zakonczono')
+  }
+
+  fetching(URL){
+    this.setState({isLoading: true})
+
+    fetch(URL)
+      .then(res => {
+        if(res.ok){
+          return res.json()
+        } else {
+          throw Error("Błąd przy pobieraniu danych z bazy!")
+        }
+      }) 
+      .then(events => {
+        console.log('Pobrał JSON.')
+        console.log(events);
+        this.setState({events, isLoading: false})
+      })
+      .catch(error => {
+        this.setState({error})
+        // console.log(error.message)
+      })
+  }
+
+  RHome() {
+    return (
+  
+            <div class="row row-no-gutters">
+                      <div class="col-sm-9panel" style={{height:'100%'}}>
+                        <div class="gallery-image">
+                          <div class="img-box">
+                            <img src="https://dummyimage.com/350x250/000/fff&text=photo" alt="logo" />
+                            <div class="transparent-box">
+                              <div class="caption">
+                                <p>Five Finger Death Punch</p>
+                                <p class="opacity-low">Five Finger Death Punch w zimowej europejskiej trasie koncertowej!</p>
+                              </div>
+                            </div> 
+                          </div>
+                          <div class="img-box">
+                            <img src="https://dummyimage.com/350x250/000/fff&text=photo" alt="logo" />
+                            <div class="transparent-box">
+                              <div class="caption">
+                                <p>Five Finger Death Punch</p>
+                                <p class="opacity-low">Five Finger Death Punch w zimowej europejskiej trasie koncertowej!</p>
+                              </div>
+                            </div> 
+                          </div><div class="img-box">
+                            <img src="https://dummyimage.com/350x250/000/fff&text=photo" alt="logo" />
+                            <div class="transparent-box">
+                              <div class="caption">
+                                <p>Five Finger Death Punch</p>
+                                <p class="opacity-low">Five Finger Death Punch w zimowej europejskiej trasie koncertowej!</p>
+                              </div>
+                            </div> 
+                          </div><div class="img-box">
+                            <img src="https://dummyimage.com/350x250/000/fff&text=photo" alt="logo" />
+                            <div class="transparent-box">
+                              <div class="caption">
+                                <p>Five Finger Death Punch</p>
+                                <p class="opacity-low">Five Finger Death Punch w zimowej europejskiej trasie koncertowej!</p>
+                              </div>
+                            </div> 
+                          </div><div class="img-box">
+                            <img src="https://dummyimage.com/350x250/000/fff&text=photo" alt="logo" />
+                            <div class="transparent-box">
+                              <div class="caption">
+                                <p>Five Finger Death Punch</p>
+                                <p class="opacity-low">Five Finger Death Punch w zimowej europejskiej trasie koncertowej!</p>
+                              </div>
+                            </div> 
+                          </div><div class="img-box">
+                            <img src="https://dummyimage.com/350x250/000/fff&text=photo" alt="logo" />
+                            <div class="transparent-box">
+                              <div class="caption">
+                                <p>Five Finger Death Punch</p>
+                                <p class="opacity-low">Five Finger Death Punch w zimowej europejskiej trasie koncertowej!</p>
+                              </div>
+                            </div> 
+                          </div><div class="img-box">
+                            <img src="https://dummyimage.com/350x250/000/fff&text=photo" alt="logo" />
+                            <div class="transparent-box">
+                              <div class="caption">
+                                <p>Five Finger Death Punch</p>
+                                <p class="opacity-low">Five Finger Death Punch w zimowej europejskiej trasie koncertowej!</p>
+                              </div>
+                            </div> 
+                          </div><div class="img-box">
+                            <img src="https://dummyimage.com/350x250/000/fff&text=photo" alt="logo" />
+                            <div class="transparent-box">
+                              <div class="caption">
+                                <p>Five Finger Death Punch</p>
+                                <p class="opacity-low">Five Finger Death Punch w zimowej europejskiej trasie koncertowej!</p>
+                              </div>
+                            </div> 
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="col-sm-3panel panelstyl" >
+                        <div id="panel">
+                          <div id="wyszukiwanie">
+                            {/* <!-- Search form --> */}
+                            <p>Wyszukaj interesujące wydarzenie:</p>
+                            <input class="form-control" type="text" placeholder="Search" aria-label="Search" style={{width:"50%", display: "inline-block"}} />
+                          </div>
+                          <div id="topwydarzeniekafelek">
+                            <p>Top wydarzenie miesiąca:</p>
+                            <div class="img-box">
+                              <img src="https://dummyimage.com/350x250/000/fff&text=photo" alt="logo" />
+                              <div class="transparent-box">
+                                <div class="caption">
+                                  <p>Five Finger Death Punch</p>
+                                </div>
+                              </div> 
+                            </div>
+                          </div>
+                        </div>
+                        <div id="stopka">
+                            Made by FKaminski, KWielgosz, RFrankiewicz<br />
+                            <b>Eventura</b> copyrights © 2020 <br />
+                            <a href="#fa"> <i class="fa fa-facebook" /></a>
+                            <a href="#tw"> <i class="fa fa-twitter-square" /></a>
+                            <a href="#gg"> <i class="fa fa-google" /></a>
+                            <a href="#gh"> <i class="fa fa-github" /></a>
+                        </div>
+                      </div>
+            </div>
+            );
+          }
+  
 
   render() {
 
@@ -56,16 +196,16 @@ class App extends React.Component {
         {/* <!-- tresc strony --> */}
                  
         <Switch>
-          <Route exact path="/"><RHome /></Route>
+          <Route exact path="/">{this.RHome}</Route>
           <Route path="/wyszukiwanie" component={EventsList} />
-          <Route path="/wydarzenie"><RSummary /></Route>
+          <Route path="/wydarzenie">{this.RSummary}</Route>
         </Switch>
         </Router>
       </div>      
     );
   }
   RSummary() {
-    
+
     return(
       <div>
         <div class="row row-no-gutters">
@@ -108,132 +248,8 @@ class App extends React.Component {
       </div>
     )
   }
+
+ 
 }
-
-function RHome() {
-  return (
-
-          <div class="row row-no-gutters">
-                    <div class="col-sm-9panel" style={{height:'100%'}}>
-                  
-                      <div class="gallery-image">
-                        <div class="img-box">
-                          <img src="img/kafelek.png" alt="" />
-                          <div class="transparent-box">
-                            <div class="caption">
-                              <p>Wydarzenie</p>
-                              <p class="opacity-low">Opis wydarzenia</p>
-                            </div>
-                          </div> 
-                        </div>
-                        <div class="img-box">
-                          <img src="img/kafelek.png" alt="" />
-                          <div class="transparent-box">
-                            <div class="caption">
-                              <p>Wydarzenie</p>
-                              <p class="opacity-low">Opis wydarzenia</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="img-box">
-                          <img src="img/kafelek.png" alt="" />
-                          <div class="transparent-box">
-                            <div class="caption">
-                              <p>Wydarzenie</p>
-                              <p class="opacity-low">Opis wydarzenia</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="img-box">
-                          <img src="img/kafelek.png" alt="" />
-                          <div class="transparent-box">
-                            <div class="caption">
-                              <p>Wydarzenie</p>
-                              <p class="opacity-low">Opis wydarzenia</p>
-                            </div>
-                          </div> 
-                        </div>
-                        <div class="img-box">
-                          <img src="img/kafelek.png" alt="" />
-                          <div class="transparent-box">
-                            <div class="caption">
-                              <p>Wydarzenie</p>
-                              <p class="opacity-low">Opis wydarzenia</p>
-                            </div>
-                          </div> 
-                        </div>
-                        <div class="img-box">
-                          <img src="img/kafelek.png" alt="" />
-                          <div class="transparent-box">
-                            <div class="caption">
-                              <p>Wydarzenie</p>
-                              <p class="opacity-low">Opis wydarzenia</p>
-                            </div>
-                          </div> 
-                        </div>
-                        <div class="img-box">
-                          <img src="img/kafelek.png" alt="" />
-                          <div class="transparent-box">
-                            <div class="caption">
-                              <p>Wydarzenie</p>
-                              <p class="opacity-low">Opis wydarzenia</p>
-                            </div>
-                          </div> 
-                        </div>
-                        <div class="img-box">
-                          <img src="img/kafelek.png" alt="" />
-                          <div class="transparent-box">
-                            <div class="caption">
-                              <p>Wydarzenie</p>
-                              <p class="opacity-low">Opis wydarzenia</p>
-                            </div>
-                          </div> 
-                        </div>
-                        <div class="img-box">
-                          <img src="img/kafelek.png" alt="" />
-                          <div class="transparent-box">
-                            <div class="caption">
-                              <p>Wydarzenie</p>
-                              <p class="opacity-low">Opis wydarzenia</p>
-                            </div>
-                          </div> 
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div class="col-sm-3panel panelstyl" >
-                      <div id="panel">
-                        <div id="wyszukiwanie">
-                          {/* <!-- Search form --> */}
-                          <p>Wyszukaj interesujące wydarzenie:</p>
-                          <input class="form-control" type="text" placeholder="Search" aria-label="Search" style={{width:"50%", display: "inline-block"}} />
-                        </div>
-                        <div id="topwydarzeniekafelek">
-                          <p>Top wydarzenie miesiąca:</p>
-                          <div class="img-box">
-                            <img src="./img/kafelek.png" alt="" />
-                            <div class="transparent-box">
-                              <div class="caption">
-                                <p>Top wydarzenie</p>
-                                <p class="opacity-low">Opis wydarzenia</p>
-                              </div>
-                            </div> 
-                          </div>
-                        </div>
-                      </div>
-                      <div id="stopka">
-                          Made by FKaminski, KWielgosz, RFrankiewicz<br />
-                          <b>Eventura</b> copyrights © 2020 <br />
-                          <a href="#fa"> <i class="fa fa-facebook" /></a>
-                          <a href="#tw"> <i class="fa fa-twitter-square" /></a>
-                          <a href="#gg"> <i class="fa fa-google" /></a>
-                          <a href="#gh"> <i class="fa fa-github" /></a>
-                      </div>
-                    </div>
-          </div>
-          );
-}
-
-
 
 export default App;
